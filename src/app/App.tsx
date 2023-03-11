@@ -2,7 +2,7 @@ import * as S from "./styles";
 
 import LoginPage from "../components/loginPage/LoginPage";
 
-function App() {
+const App = () => {
   return (
     <S.AppWrapper>
       <S.LogginSection>
@@ -10,6 +10,6 @@ function App() {
       </S.LogginSection>
     </S.AppWrapper>
   );
-}
+};
 
 export default App;
