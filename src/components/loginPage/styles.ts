@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+const primary = {
+  white: "#f8f9fa",
+  dark: "#212529",
+  grey: "#343a40",
+};
+
 export const LoginPageWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,13 +23,21 @@ export const LoginPageInput = styled.input`
   width: 25rem;
   height: 3rem;
   margin-bottom: 0.5rem;
-  border: 1px black solid;
+  border: none;
+  outline: none;
   border-radius: 1.5rem;
 `;
 
 export const LoginPageButton = styled.button`
+  background-color: ${primary.dark};
+  color: ${primary.white};
   width: 16rem;
   height: 3rem;
-  border: 1px black solid;
+  border: none;
   border-radius: 1.5rem;
+  transition: 0.3s;
+  :hover {
+    background-color: ${primary.grey};
+    cursor: pointer;
+  }
 `;
