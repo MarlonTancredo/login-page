@@ -1,6 +1,10 @@
 import * as S from "./styles";
 
-const LoginPage = () => {
+type ButtonMessage = {
+  message?: string;
+};
+
+const LoginPage = ({ message }: ButtonMessage) => {
   const clickedButton = () => {
     console.log("Clicked");
   };
@@ -18,7 +22,7 @@ const LoginPage = () => {
           placeholder="Password"
           autoComplete="password"
         />
-        <S.LoginPageButton onClick={clickedButton}>Login</S.LoginPageButton>
+        <S.LoginPageButton onClick={clickedButton}>{message}</S.LoginPageButton>
       </S.LoginPageForm>
     </S.LoginPageWrapper>
   );

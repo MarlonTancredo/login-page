@@ -6,7 +6,7 @@ const App = () => {
   return (
     <S.AppWrapper>
       <S.LogginSection>
-        <LoginPage />
+        <LoginPage message="Login" />
       </S.LogginSection>
     </S.AppWrapper>
   );
