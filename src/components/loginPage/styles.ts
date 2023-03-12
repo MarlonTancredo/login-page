@@ -1,10 +1,19 @@
 import styled from "styled-components";
 
-const primary = {
+type primaryProps = {
+  white: string;
+  dark: string;
+  grey: string;
+  red: string;
+  clearRed: string;
+};
+
+const primary: primaryProps = {
   white: "#f8f9fa",
   dark: "#212529",
   grey: "#343a40",
-  red: "red",
+  red: "#d90429",
+  clearRed: "#ef233c",
 };
 
 export const LoginPageWrapper = styled.div`
@@ -29,8 +38,9 @@ export const LoginPageInput = styled.input`
   border-radius: 1.5rem;
 `;
 
-export const LoginPageButton = styled.button<{ red?: boolean }>`
-  background-color: ${(props) => (props.red ? primary.red : primary.dark)};
+export const LoginPageButton = styled.button<{ forbidden?: boolean }>`
+  background-color: ${(props) =>
+    props.forbidden ? primary.red : primary.dark};
   color: ${primary.white};
   width: 16rem;
   height: 3rem;
@@ -38,7 +48,8 @@ export const LoginPageButton = styled.button<{ red?: boolean }>`
   border-radius: 1.5rem;
   transition: 0.3s;
   :hover {
-    background-color: ${primary.grey};
+    background-color: ${(props) =>
+      props.forbidden ? primary.clearRed : primary.grey};
     cursor: pointer;
   }
 `;

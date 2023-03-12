@@ -3,10 +3,10 @@ import * as S from "./styles";
 
 type ButtonProps = {
   name: string;
-  red?: boolean;
+  forbidden?: boolean;
 };
 
-const LoginPage = ({ name, red }: ButtonProps) => {
+const LoginPage = ({ name, forbidden }: ButtonProps) => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
@@ -21,6 +21,14 @@ const LoginPage = ({ name, red }: ButtonProps) => {
   };
 
   const clickedButton = () => {
+    if (userName === "") {
+      alert("You didn't enter your user name");
+      return;
+    }
+    if (password === "") {
+      alert("You didn't enter your password");
+      return;
+    }
     console.log(`UserName: ${userName} Password: ${password} `);
   };
 
@@ -33,6 +41,7 @@ const LoginPage = ({ name, red }: ButtonProps) => {
           placeholder="Username"
           autoComplete="username"
           onChange={handleUserName}
+          required
         />
         <S.LoginPageInput
           value={password}
@@ -40,8 +49,13 @@ const LoginPage = ({ name, red }: ButtonProps) => {
           placeholder="Password"
           autoComplete="password"
           onChange={handlePassword}
+          required
         />
-        <S.LoginPageButton red={red} type="submit" onClick={clickedButton}>
+        <S.LoginPageButton
+          forbidden={forbidden}
+          type="submit"
+          onClick={clickedButton}
+        >
           {name}
         </S.LoginPageButton>
       </S.LoginPageForm>
