@@ -2,7 +2,7 @@ import * as S from "./styles";
 
 import LoginPage from "../components/loginPage/LoginPage";
 
-const App = () => {
+const App: React.FunctionComponent = () => {
   return (
     <S.AppWrapper>
       <S.LogginSection>
