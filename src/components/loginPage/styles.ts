@@ -1,14 +1,6 @@
 import styled from "styled-components";
 
-type primaryProps = {
-  white: string;
-  dark: string;
-  grey: string;
-  red: string;
-  clearRed: string;
-};
-
-const primary: primaryProps = {
+const primary = {
   white: "#f8f9fa",
   dark: "#212529",
   grey: "#343a40",

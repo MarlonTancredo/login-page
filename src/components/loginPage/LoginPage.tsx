@@ -29,6 +29,8 @@ const LoginPage = ({ name, forbidden }: ButtonProps) => {
       alert("You didn't enter your password");
       return;
     }
+    setUserName("");
+    setPassword("");
     console.log(`UserName: ${userName} Password: ${password} `);
   };
 
