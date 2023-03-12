@@ -1,20 +1,23 @@
 import { useState } from "react";
 import * as S from "./styles";
 
-type ButtonMessage = {
-  message?: string;
+type ButtonProps = {
+  name: string;
+  red?: boolean;
 };
 
-const LoginPage = ({ message }: ButtonMessage) => {
+const LoginPage = ({ name, red }: ButtonProps) => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
   const handleUserName = (event: { target: { value: string } }) => {
-    setUserName(event.target.value);
+    const myEvent = event.target.value;
+    setUserName(myEvent);
   };
 
   const handlePassword = (event: { target: { value: string } }) => {
-    setPassword(event.target.value);
+    const myEvent = event.target.value;
+    setPassword(myEvent);
   };
 
   const clickedButton = () => {
@@ -38,8 +41,8 @@ const LoginPage = ({ message }: ButtonMessage) => {
           autoComplete="password"
           onChange={handlePassword}
         />
-        <S.LoginPageButton type="submit" onClick={clickedButton}>
-          {message}
+        <S.LoginPageButton red={red} type="submit" onClick={clickedButton}>
+          {name}
         </S.LoginPageButton>
       </S.LoginPageForm>
     </S.LoginPageWrapper>

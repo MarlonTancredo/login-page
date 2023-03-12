@@ -6,7 +6,7 @@ const App: React.FunctionComponent = () => {
   return (
     <S.AppWrapper>
       <S.LogginSection>
-        <LoginPage message="Login" />
+        <LoginPage name="Login" />
       </S.LogginSection>
     </S.AppWrapper>
   );

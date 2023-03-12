@@ -4,6 +4,7 @@ const primary = {
   white: "#f8f9fa",
   dark: "#212529",
   grey: "#343a40",
+  red: "red",
 };
 
 export const LoginPageWrapper = styled.div`
@@ -28,8 +29,8 @@ export const LoginPageInput = styled.input`
   border-radius: 1.5rem;
 `;
 
-export const LoginPageButton = styled.button`
-  background-color: ${primary.dark};
+export const LoginPageButton = styled.button<{ red?: boolean }>`
+  background-color: ${(props) => (props.red ? primary.red : primary.dark)};
   color: ${primary.white};
   width: 16rem;
   height: 3rem;
