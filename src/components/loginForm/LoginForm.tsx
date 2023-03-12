@@ -2,11 +2,11 @@ import { useState } from "react";
 import * as S from "./styles";
 
 type ButtonProps = {
-  name: string;
+  buttonName: string;
   forbidden?: boolean;
 };
 
-const LoginPage = ({ name, forbidden }: ButtonProps) => {
+const LoginForm = ({ buttonName, forbidden }: ButtonProps) => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
@@ -58,11 +58,11 @@ const LoginPage = ({ name, forbidden }: ButtonProps) => {
           type="submit"
           onClick={clickedButton}
         >
-          {name}
+          {buttonName}
         </S.LoginPageButton>
       </S.LoginPageForm>
     </S.LoginPageWrapper>
   );
 };
 
-export default LoginPage;
+export default LoginForm;

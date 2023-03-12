@@ -1,12 +1,12 @@
 import * as S from "./styles";
 
-import LoginPage from "../components/loginPage/LoginPage";
+import LoginForm from "../components/loginForm/LoginForm";
 
 const App: React.FunctionComponent = () => {
   return (
     <S.AppWrapper>
       <S.LogginSection>
-        <LoginPage name="Login" />
+        <LoginForm buttonName="Login" />
       </S.LogginSection>
     </S.AppWrapper>
   );
