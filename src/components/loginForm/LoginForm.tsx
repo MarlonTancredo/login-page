@@ -43,7 +43,6 @@ const LoginForm = ({ buttonName, forbidden }: ButtonProps) => {
           placeholder="Username"
           autoComplete="username"
           onChange={handleUserName}
-          required
         />
         <S.LoginPageInput
           value={password}
@@ -51,7 +50,6 @@ const LoginForm = ({ buttonName, forbidden }: ButtonProps) => {
           placeholder="Password"
           autoComplete="password"
           onChange={handlePassword}
-          required
         />
         <S.LoginPageButton
           forbidden={forbidden}
