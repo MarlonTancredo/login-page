@@ -1,6 +1,14 @@
 import styled from "styled-components";
 
-const primary = {
+type PrimaryColors = {
+  white: string;
+  dark: string;
+  grey: string;
+  red: string;
+  clearRed: string;
+};
+
+const primaryColors: PrimaryColors = {
   white: "#f8f9fa",
   dark: "#212529",
   grey: "#343a40",
@@ -32,8 +40,8 @@ export const LoginPageInput = styled.input`
 
 export const LoginPageButton = styled.button<{ forbidden?: boolean }>`
   background-color: ${(props) =>
-    props.forbidden ? primary.red : primary.dark};
-  color: ${primary.white};
+    props.forbidden ? primaryColors.red : primaryColors.dark};
+  color: ${primaryColors.white};
   width: 16rem;
   height: 3rem;
   border: none;
@@ -41,7 +49,7 @@ export const LoginPageButton = styled.button<{ forbidden?: boolean }>`
   transition: 0.3s;
   :hover {
     background-color: ${(props) =>
-      props.forbidden ? primary.clearRed : primary.grey};
+      props.forbidden ? primaryColors.clearRed : primaryColors.grey};
     cursor: pointer;
   }
 `;
